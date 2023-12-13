@@ -1,0 +1,41 @@
+.driver-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.driver-card {
+  background-color: rgb(110, 110, 199);
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.w-50-block {
+  width: 50%;
+  display: inline-block;
+}
+
+.w-40-block {
+  width: 40%;
+  display: inline-block;
+}
+
+.w-60-block {
+  width: 60%;
+  display: inline-block;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.p-20 {
+  padding: 20px;
+}

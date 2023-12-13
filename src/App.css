@@ -37,9 +37,12 @@
   }
 }
 
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+}
 
-.card-container{
-display: flex;
-justify-content: space-evenly;
-
+.driver-container {
+  width: 100%;
+  padding: 20px;
 }
