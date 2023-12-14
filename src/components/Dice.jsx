@@ -24,7 +24,7 @@ function Dice() {
   }, [clicked]);
 
   return (
-    <div>
+    <div style={{ height: "300px" }}>
       <img
         style={{ width: "200px" }}
         src={dice}

@@ -7,9 +7,15 @@ function ClickablePicture(props) {
   const [state, setState] = useState(false);
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", height: "300px" }}>
       <img
-        style={{ position: "absolute", left: 0, top: 0, zIndex: -1 }}
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: 0,
+          transform: "translateX(-50%)",
+          zIndex: 1,
+        }}
         src={img}
         onClick={() => setState(!state)}
       />
@@ -19,7 +25,8 @@ function ClickablePicture(props) {
           visibility: state ? "visible" : "hidden",
           width: "100px",
           position: "absolute",
-          left: "48px",
+          transform: "translateX(-50%)",
+          left: "calc(50%+48px)",
           top: "56px",
           zIndex: 2,
         }}
