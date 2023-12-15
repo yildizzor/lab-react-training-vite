@@ -1,0 +1,28 @@
+.facebook {
+  display: flex;
+  row-gap: 15px;
+  justify-content: center;
+  flex-direction: column;
+  margin: 15px 300px;
+}
+
+.profile-info {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.profile {
+  border: 1px solid black;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 200px;
+  column-gap: 50px;
+}
+
+.button {
+  margin: 10px;
+  border: 1px solid gray;
+  width: 100px;
+  height: 30px;
+  
+}
