@@ -1,0 +1,9 @@
+.form {
+  width: 800px;
+}
+
+.submit-button {
+  background-color: aqua;
+  width: 100px;
+  height: 40px;
+}

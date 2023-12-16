@@ -12,6 +12,7 @@ import Dice from "./components/Dice";
 import Carousel from "./components/Carousel";
 import NumbersTable from "./components/NumbersTable";
 import FaceBook from "./components/FaceBook";
+import SignupPage from "./components/SignupPage";
 
 import Maxence from "./assets/images/maxence.png";
 import Glasses from "./assets/images/glasses.png";
@@ -138,6 +139,10 @@ function App() {
       </div>
       <div>
         <FaceBook />
+      </div>
+
+      <div>
+        <SignupPage />
       </div>
     </div>
   );
