@@ -1,11 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import "./SignupPage.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nationality, setNationality] = useState("");
+  const [passwordValidity, setPasswordValidity] = useState("");
+  const [emailValidity, setEmailValidity] = useState("");
 
   const sayHello = () => {
     if (nationality === "en") {
@@ -20,15 +23,19 @@ function SignupPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setPasswordValidity(
+      password.includes("?") && password.length >= 6 ? "is-valid" : "is-invalid"
+    );
+
+    setEmailValidity(email.includes("@") ? "is-valid" : "is-invalid");
   };
   return (
-    <div >
+    <div>
       <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="name">Email</label>
         <input
-          className={
-            "form-control " + (email.includes("@") ? "is-valid" : "is-invalid")
-          }
+          className={`form-control ${emailValidity}`}
           aria-describedby="emailFeedback"
           type="email"
           id="name"
@@ -36,18 +43,17 @@ function SignupPage() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
-        <div className="valid-feedback">You typed a valid email!</div>
-        <div id="emailFeedback" className="invalid-feedback">
-          You typed an invalid email.
-        </div>
+        {emailValidity === "is-valid" && (
+          <div className="valid-feedback">You typed a valid email!</div>
+        )}
+        {emailValidity === "is-invalid" && (
+          <div id="emailFeedback" className="invalid-feedback">
+            You typed an invalid email.
+          </div>
+        )}
         <label htmlFor="password">Password</label>
         <input
-          className={
-            "form-control " +
-            (password.includes("?") && password.length >= 6
-              ? "is-valid"
-              : "is-invalid")
-          }
+          className={`form-control ${passwordValidity}`}
           type="password"
           id="password"
           name="password"
@@ -55,10 +61,14 @@ function SignupPage() {
           onChange={(event) => setPassword(event.target.value)}
           aria-describedby="passwordFeedback"
         />
-        <div className="valid-feedback">Your password is strong.</div>
-        <div id="passwordFeedback" className="invalid-feedback">
-          Your password is too weak.
-        </div>
+        {passwordValidity === "is-valid" && (
+          <div className="valid-feedback">Your password is strong.</div>
+        )}
+        {passwordValidity === "is-invalid" && (
+          <div id="passwordFeedback" className="invalid-feedback">
+            Your password is too weak.
+          </div>
+        )}
         <label htmlFor="nationality">Nationality</label>
         <select
           className="form-control"
@@ -76,12 +86,9 @@ function SignupPage() {
         <button className="submit-button">Submit</button>
       </form>
       <div className="form">
-
-    
-      <p>{sayHello()}</p>
-      <p>Your mail adres is {email}</p>
-      <p>Your mail adres is correct</p>
-
+        <p>{sayHello()}</p>
+        <p>Your mail adres is {email}</p>
+        <p>Your mail adres is correct</p>
       </div>
     </div>
   );

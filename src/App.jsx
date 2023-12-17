@@ -13,6 +13,7 @@ import Carousel from "./components/Carousel";
 import NumbersTable from "./components/NumbersTable";
 import FaceBook from "./components/FaceBook";
 import SignupPage from "./components/SignupPage";
+import RGBColorPicker from "./components/RGBColorPicker";
 
 import Maxence from "./assets/images/maxence.png";
 import Glasses from "./assets/images/glasses.png";
@@ -143,6 +144,9 @@ function App() {
 
       <div>
         <SignupPage />
+      </div>
+      <div>
+        <RGBColorPicker />
       </div>
     </div>
   );

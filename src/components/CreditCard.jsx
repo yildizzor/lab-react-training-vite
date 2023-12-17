@@ -11,7 +11,7 @@ function CreditCard(props) {
   };
   return (
     <div
-      className="card"
+      className="credit-card"
       style={{ backgroundColor: props.bgColor, color: props.color }}
     >
       <div className="visa_logo">
